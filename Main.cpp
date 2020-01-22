@@ -66,7 +66,7 @@ void main() {
 		vector<Vec4i> hierarchy;
 
 		//string path = "Testing dataset\\" + std::to_string(i) + ".png";
-		string path = "Testing dataset\\ds02\\" + std::to_string(i) + ".png";
+		string path = "Testing dataset\\ds01\\" + std::to_string(i) + ".png";
 
 		frame = imread(path);
 
@@ -84,16 +84,13 @@ void main() {
 		findContours(sobelSUM, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_NONE);
 		drawContours(frame, contours, 0, Scalar(0,0,255), 2, 8, hierarchy, 0);*/
 
+		//rectangle(frame, Point((frame.cols / 10 * 1), frame.cols / 10 * 1), Point(frame.cols - (frame.cols / 10 * 1), frame.rows - (frame.cols / 10 * 1)), Scalar(0, 0, 255), 4);
+
+		//rectangle(frame, Point(0, frame.rows / 10 * 3), Point(frame.cols, frame.rows - frame.rows / 10 * 3), Scalar(255, 0, 255), 4);
+
 		cvtColor(frame, output, COLOR_BGR2HSV);
 		//resize(output, output, INTER_C);
 		medianBlur(output, output, 9);
-
-		for (size_t i = 0; i < circles.size(); i++)
-		{
-			Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
-			int radius = cvRound(circles[i][2]);
-			//circle(output, center, radius, Scalar(0, 0, 255), 3, 8, 0);
-		}
 
 		Mat redMat1, redMat2, redMat3, redMat4, redMat5, redMat, blueMat, blueMat1, blueMat2, lowerBlueMat, upperBlueMat, orangeMat, orangeMat1, orangeMat2, orangeMat3, orangeMat4, orangeMat5, orangeMat6, greenMat, greenMat1, greenMat2;
 
