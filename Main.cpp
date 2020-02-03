@@ -66,7 +66,7 @@ void main() {
 		vector<Vec4i> hierarchy;
 
 		//string path = "Testing dataset\\" + std::to_string(i) + ".png";
-		string path = "Testing dataset\\ds01\\" + std::to_string(i) + ".png";
+		string path = "Testing dataset\\ds02\\" + std::to_string(i) + ".png";
 
 		frame = imread(path);
 
